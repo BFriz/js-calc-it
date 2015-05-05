@@ -4,6 +4,8 @@ var firstOp ='';
 var secondNum = '';
 var operator = document.getElementsByClassName('operator');
 var equal = document.getElementsByClassName('eq');
+var ans = '';
+var display = document.getElementsByClassName('display')
 //find and store the first number input from the user
 for (var i = 0; i< number.length; i++){
   number[i].addEventListener("click", function(e){
@@ -21,16 +23,24 @@ for (var i = 0; i< operator.length; i++){
   });
 }
 
-  // switch(answer){
-  //   case "-":
-  //   var ans = firstNum - secondNum;
-  //   break;
-  //   case "+":
-  //   var ans = firstNum + secondNum;
-  //   break;
-  //   case "*":
-  //   var ans = firstNum * secondNum;;
-  //   break;
-  //   case "/":
-  //   var ans = firstNum / secondNum;;
-  //   break;
+equal[0].addEventListener("click", function(e){
+   switch(firstOp){
+    case "-":
+    ans = firstNum - secondNum;
+    break;
+    case "+":
+    ans = firstNum + secondNum;
+    break;
+    case "*":
+    ans = firstNum * secondNum;
+    break;
+    case "/":
+    ans = firstNum / secondNum;
+    break;
+   }
+   });
+
+display[0].addEventListener('submit', function(event) {
+ alert(this.ans);
+});
+ 
